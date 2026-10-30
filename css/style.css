@@ -982,9 +982,9 @@ button {
 
     font-size: 13px;
 
-    line-height: 1.9;
+    line-height: 1.8;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 
 }
 
@@ -1024,7 +1024,7 @@ button {
 
     color: var(--accent);
 
-    font-size: 11px;
+    font-size: 15px;
 
 }
 
@@ -1044,7 +1044,7 @@ button {
 
     color: #666;
 
-    font-size: 8px;
+    font-size: 9px;
 
     display: block;
 
@@ -1073,7 +1073,7 @@ button {
 
     align-items: center;
 
-    gap: 30px;
+    gap: 1px;
 
     padding: 35px 0;
 
@@ -1085,8 +1085,9 @@ button {
 .education-number {
 
     color: var(--accent);
+    color: #d9f40afc;
 
-    font-size: 12px;
+    font-size: 17px;
 
 }
 
@@ -1106,9 +1107,9 @@ button {
 
     font-family: "Manrope", sans-serif;
 
-    font-size: 25px;
+    font-size: 15px;
 
-    margin: 8px 0;
+    margin: 10px 0;
 
 }
 
@@ -1117,7 +1118,7 @@ button {
 
     color: var(--muted);
 
-    font-size: 12px;
+    font-size: 9px;
 
 }
 
@@ -1562,7 +1563,7 @@ button {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 23px;
 }
 
 .project-card {
@@ -2883,7 +2884,7 @@ body.modal-open {
 
     padding: 30px;
 
-    background: rgba(255, 15, 15, 0.954);
+    background: rgba(26, 27, 15, 0.918);
 
     z-index: 9999;
 
@@ -2926,7 +2927,7 @@ body.modal-open {
 
     border-radius: 8px;
 
-    box-shadow: 0 20px 80px rgba(8, 8, 8, 0.6);
+    box-shadow: 0 20px 80px rgb(0, 0, 0);
 }
 
 .modal-close {
@@ -3032,4 +3033,857 @@ body.modal-open {
 
 .about-photo:hover img {
     filter: grayscale(0%);
+}
+
+
+
+/* =========================================
+   COMPACT CERTIFICATE CARDS
+   ========================================= */
+
+.certificates-list,
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+    margin-top: 30px;
+}
+
+.certificate-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: auto;
+    overflow: hidden;
+
+    background: #070606;
+    border: 1px solid #fbff00;
+    border-radius: 12px;
+
+    transition: transform 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-3px);
+    border-color: #f11545;
+}
+
+/* Reduce certificate image height */
+
+.certificate-image,
+.certificate-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 165px;
+    overflow: hidden;
+    background: #111;
+}
+
+.certificate-image img,
+.certificate-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+/* Compact text area */
+
+.certificate-content,
+.certificate-info {
+    padding: 17px 18px 20px;
+}
+
+.certificate-category {
+    display: block;
+    margin-bottom: 8px;
+    color: hsl(64, 98%, 59%);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 1.7;
+}
+
+.certificate-content h3,
+.certificate-info h3 {
+    margin: 0 0 8px;
+    color: #fbfcf9;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.certificate-issuer {
+    margin: 0 0 5px;
+    color: #faf9f9;
+    font-size: 12px;
+}
+
+.certificate-date {
+    margin: 0;
+    color: #858585;
+    font-size: 11px;
+}
+
+/* Buttons */
+
+.certificate-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.certificate-actions a,
+.certificate-actions button,
+.certificate-view {
+    padding: 9px 10px;
+    border: 1px solid #cc0738;
+    border-radius: 5px;
+    background: transparent;
+    color: #b7ff00;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.certificate-actions a:hover,
+.certificate-actions button:hover,
+.certificate-view:hover {
+    background: #b7ff00;
+    color: #080808;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+    .certificates-list,
+    .certificates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .certificates-list,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .certificate-image,
+    .certificate-thumbnail {
+        height: 190px;
+    }
+}
+
+/* =========================================
+   CERTIFICATE CARDS — EQUAL SIZE
+========================================= */
+
+/* Keep every card in the same grid layout */
+.certificates-list,
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Equal height for all cards */
+.certificate-card {
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+    min-height: 340px;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Same image area for every certificate */
+.certificate-image,
+.certificate-thumbnail {
+    position: relative;
+    flex: 0 0 155px;
+    width: 100%;
+    height: 155px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.certificate-image img,
+.certificate-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+/* Consistent content area */
+.certificate-content,
+.certificate-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: 16px 18px;
+    box-sizing: border-box;
+}
+
+/* Keep category labels aligned */
+.certificate-category {
+    min-height: 14px;
+    margin-bottom: 8px;
+}
+
+/* Reserve equal title space */
+.certificate-content h3,
+.certificate-info h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+line-clamp: 2;
+    overflow: hidden;
+    min-height: 44px;
+    margin: 0 0 8px;
+    line-height: 22px;
+}
+
+/* Consistent issuer and date spacing */
+.certificate-issuer {
+    margin: 0 0 5px;
+    line-height: 18px;
+}
+
+.certificate-date {
+    margin: 0;
+    line-height: 16px;
+}
+
+/* Keep action buttons at the bottom */
+.certificate-actions {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* Responsive sizing */
+@media (max-width: 900px) {
+    .certificates-list,
+    .certificates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .certificates-list,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card {
+        height: 340px;
+        min-height: 340px;
+    }
+}
+
+
+
+/* =====================================================
+   CERTIFICATE DESCRIPTION PANEL
+===================================================== */
+
+#certificateModal .modal-content {
+    width: min(1000px, 92vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #070707;
+    border: 1px solid #b7ff00;
+    border-radius: 14px;
+    color: #f5f5f5;
+}
+
+#certificateModal #modalImage {
+    display: block;
+    width: 100%;
+    max-height: 52vh;
+    object-fit: contain;
+    margin: 0 auto 22px;
+    background: #000000a1;
+}
+
+.certificate-description {
+    margin: 20px 0;
+    padding: 22px;
+    border: 1px solid #292929;
+    border-left: 3px solid #b7ff00;
+    border-radius: 10px;
+    background: #101010;
+}
+
+.certificate-description-header {
+    margin-bottom: 18px;
+}
+
+.description-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #b7ff00;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.description-title {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.35;
+    
+}
+
+.description-category {
+    color: #b7ff00;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.description-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    margin: 16px 0;
+}
+
+.description-meta p {
+    margin: 0;
+    color: #bdbdbd;
+    font-size: 13px;
+}
+
+.description-meta strong {
+    color: #fff;
+}
+
+.description-body {
+    color: #c7c7c7;
+    font-size: 14px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.description-github {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 15px;
+    border: 1px solid #b7ff00;
+    border-radius: 5px;
+    color: #b7ff00;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.description-github:hover {
+    background: #b7ff00;
+    color: #050505;
+}
+
+.description-github[hidden] {
+    display: none !important;
+}
+
+#certificateModal .modal-open-link {
+    display: inline-block;
+    margin: 10px 0 4px;
+}
+
+@media (max-width: 600px) {
+
+    #certificateModal .modal-content {
+        width: 95vw;
+        max-height: 88vh;
+        padding: 14px;
+    }
+
+    #certificateModal #modalImage {
+        max-height: 36vh;
+    }
+
+    .certificate-description {
+        padding: 16px;
+    }
+
+    .description-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.all-projects-link a {
+    display: inline-block;
+    padding: 15px 22px;
+    border: 1px solid #c8ff00;
+    color: #c8ff00;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background 0.25s ease, color 0.25s ease;
+
+}
+.all-projects-link a:hover {
+    background: #c8ff00;
+    color: #080808;
+}
+
+
+
+/* =========================================
+   SOCIAL MEDIA ICON BUTTONS
+========================================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.social-links > span {
+    color: #c8ff00;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-right: 5px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c8ff00;
+    border-radius: 50%;
+    color: #c8ff00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a svg {
+    width: 19px;
+    height: 19px;
+    display: block;
+}
+
+.social-links a:hover {
+    background: #c8ff00;
+    color: #080808;
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(200, 255, 0, 0.3);
+}
+
+/* Mobile adjustment */
+
+@media (max-width: 480px) {
+    .social-links {
+        gap: 9px;
+    }
+
+    .social-links a {
+        width: 38px;
+        height: 38px;
+    }
+
+    .social-links a svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+
+
+/* =========================================
+   FINAL MOBILE RESPONSIVENESS FIX
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* Prevent horizontal overflow */
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+        max-width: 100%;
+    }
+
+    /* Hero section */
+    .hero-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 11vw, 55px);
+        letter-spacing: -2px;
+        overflow-wrap: anywhere;
+    }
+
+    .profile-wrapper {
+        width: min(100%, 300px);
+    }
+
+    .floating-card {
+        padding: 10px;
+    }
+
+    .card-left {
+        left: -5px;
+    }
+
+    .card-right {
+        right: -5px;
+    }
+
+    /* About section */
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    /* Education: keep school and degree readable */
+    .education-card {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 12px;
+        padding: 25px 0;
+    }
+
+    .education-info {
+        min-width: 0;
+    }
+
+    .education-info h3 {
+        font-size: clamp(16px, 4.5vw, 22px);
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .education-info p {
+        font-size: 12px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* Skills */
+    .skills-showcase {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+
+    .project-content h3 {
+        font-size: 22px;
+        overflow-wrap: anywhere;
+    }
+
+    .project-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* Certificates */
+    .certificates-grid,
+    .certificates-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .certificate-card {
+        height: auto;
+        min-height: 340px;
+    }
+
+    .certificate-content h3,
+    .certificate-info h3 {
+        min-height: 0;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .contact-card-content h3 {
+        overflow-wrap: anywhere;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .education-card {
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .education-info h3 {
+        font-size: 16px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+    .certificate-content,
+    .certificate-info {
+        padding: 14px;
+    }
+}
+
+/* =================================
+   SKILL BOXES WITH ICONS
+================================= */
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.skill-tag i,
+.skill-tag img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.skill-tag img {
+    filter: none;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent-color, #d5ff00);
+    transform: translateY(-2px);
+    transition: 0.25s ease;
+}
+
+
+
+/* ABOUT CONTENT ALIGNMENT ONLY */
+
+.about-content {
+    text-align: left;
+}
+
+.about-content p {
+    text-align: left;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Align the three highlights consistently */
+
+.about-stats {
+    text-align: left;
+}
+
+.about-stats > div {
+    text-align: left;
+}
+
+
+
+
+
+
+
+/* ==========================================
+   EDUCATION - VERTICAL TIMELINE DESIGN
+========================================== */
+
+.education-timeline {
+    position: relative;
+    max-width: 1050px;
+    margin: 50px auto 0;
+    padding-left: 55px;
+}
+
+/* Vertical connecting line */
+.education-timeline::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 15px;
+    bottom: 15px;
+    width: 1px;
+    background: rgba(198, 255, 0, 0.3);
+}
+
+/* Education entry */
+.education-timeline .education-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 25px;
+
+    padding: 28px 30px;
+    margin-bottom: 20px;
+
+    background: #0b0b0b;
+    border: 1px solid #242424;
+    border-radius: 8px;
+
+    transition: border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Timeline marker */
+.education-timeline .education-number {
+    position: absolute;
+    left: -55px;
+    top: 32px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0b0b0b;
+    border: 1px solid #C6FF00;
+    border-radius: 50%;
+
+    color: #C6FF00;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+/* Hover effect */
+.education-timeline .education-card:hover {
+    transform: translateX(5px);
+    border-color: #C6FF00;
+}
+
+/* Category label */
+.education-timeline .education-info small {
+    display: block;
+    color: #C6FF00;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin-bottom: 12px;
+}
+
+/* Qualification title */
+.education-timeline .education-info h3 {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+/* Institution */
+.education-timeline .education-institution {
+    color: #dedede;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Location and details */
+.education-timeline .education-info p:not(.education-institution) {
+    color: #888888;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Year / duration badge */
+.education-timeline .education-tag {
+    color: #C6FF00;
+    background: rgba(198, 255, 0, 0.06);
+    border: 1px solid rgba(198, 255, 0, 0.3);
+    border-radius: 4px;
+    padding: 9px 13px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+
+    .education-timeline {
+        padding-left: 40px;
+        margin-top: 35px;
+    }
+
+    .education-timeline::before {
+        left: 12px;
+    }
+
+    .education-timeline .education-number {
+        left: -40px;
+        width: 27px;
+        height: 27px;
+        font-size: 9px;
+    }
+
+    .education-timeline .education-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 22px 18px;
+    }
+
+    .education-timeline .education-info h3 {
+        font-size: 19px;
+    }
+
+    .education-timeline .education-tag {
+        justify-self: start;
+    }
 }
