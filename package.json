@@ -23,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/thefavmaverick-coder/Ambi_Rajan_Portfolio/issues"
   },
-  "homepage": "https://github.com/thefavmaverick-coder/Ambi_Rajan_Portfolio#readme",
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1"
-  }
+  "homepage": "https://github.com/thefavmaverick-coder/Ambi_Rajan_Portfolio#readme"
 }
